@@ -1,12 +1,13 @@
 import Header from "./Component.jsx/Header";
 import BannerCard from "./Component.jsx/BannerCards";
 // import { firstBannerIcons } from "../assets";
-import { image } from "../assets";
+import { generalIcons, image } from "../assets";
 import { section2 } from "../assets";
 import ButtonFuel from "./Component.jsx/ButtonFuel";
 import FDCards from "./Component.jsx/FDCards";
 import { fourthSection } from "../assets";
 import { BannerCards, fifthSection, rocketCards, Section2 } from "./Data/content";
+import FifthSecCard from "./Component.jsx/FifthSecCards";
 
 function LandingPage() {
     const px = 'px-[clamp(60px,8.3vw,120px)]'
@@ -187,14 +188,31 @@ function LandingPage() {
                     <p className={`font-[300] text-[18px]`}>Track, analyze, and optimize your fuel operations — all in one powerful platform.</p>
                 </div>
                 <div>
-                    <h3>For Users</h3>
-                    <div>
+                    <h3 className="font-[500] text-[24px] mb-[15px]">For Users</h3>
+                    <div className="grid grid-cols-3 gap-[30px]">
                         {fifthSection?.forUsers?.map((element, i) => {
 
                             return (
-                                <div>
-                                    
-                                </div>
+                                <FifthSecCard
+                                    icon={generalIcons.chartSuccess}
+                                    text={element.text}
+                                    heading={element.heading}
+                                />
+                            )
+                        })}
+                    </div>
+                </div>
+                <div>
+                    <h3 className="font-[500] text-[24px] my-[15px] mt-[30px]">For Oil Dealers</h3>
+                    <div className="grid grid-cols-3 gap-[30px]">
+                        {fifthSection?.forDealers?.map((element, i) => {
+
+                            return (
+                                <FifthSecCard
+                                    icon={generalIcons.chartSuccess}
+                                    text={element.text}
+                                    heading={element.heading}
+                                />
                             )
                         })}
                     </div>

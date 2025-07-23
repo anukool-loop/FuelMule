@@ -1,66 +1,18 @@
 import Header from "./Component.jsx/Header";
 import BannerCard from "./Component.jsx/BannerCards";
-import { firstBannerIcons } from "../assets";
+// import { firstBannerIcons } from "../assets";
 import { image } from "../assets";
 import { section2 } from "../assets";
 import ButtonFuel from "./Component.jsx/ButtonFuel";
 import FDCards from "./Component.jsx/FDCards";
 import { fourthSection } from "../assets";
+import { BannerCards, fifthSection, rocketCards, Section2 } from "./Data/content";
 
 function LandingPage() {
+    const px = 'px-[clamp(60px,8.3vw,120px)]'
+    const py = 'py-[clamp(40px,5.76vw,85px)]'
 
-    const BannerCards = [
-        {
-            text: "Reduced risk of runout",
-            icon: firstBannerIcons.recycleIcon
-        },
-        {
-            text: "Better pricing without shopping around",
-            icon: firstBannerIcons.labelIcon
-        },
-        {
-            text: "More burner service options",
-            icon: firstBannerIcons.repairIcon
-        },
-        {
-            text: "Better for the environment",
-            icon: firstBannerIcons.treeIcon
-        }
-    ]
 
-    const Section2 = [
-        {
-            text: "Milo does the work",
-            icon: section2.battryIcon
-        },
-        {
-            text: "Milo is your Reliable Partner",
-            icon: section2.chainIcon
-        }
-    ]
-
-    const rocketCards = [
-        {
-            heading: "Fuel Alerts",
-            para: "Milo texts you your fuel level every week."
-        },
-        {
-            heading: "Delivery Confirmed",
-            para: "Milo lets you know when fuel has been delivered."
-        },
-        {
-            heading: "Fuel Monitoring",
-            para: "Milo Keeps an eye on your fuel level 24 hours a day"
-        },
-        {
-            heading: "Days Left to Heat",
-            para: "Milo tells you how many heating days remain after your first fill."
-        },
-        {
-            heading: "Fuel Reminders",
-            para: "Milo reminds you to refill and finds the best price."
-        }
-    ]
 
 
     return (
@@ -73,7 +25,7 @@ function LandingPage() {
                     MiloFuel: A Better Way to Purchase Fuel Oil
                 </h1>
                 <p className=" text-[18px] font-[300] pb-[50px] w-[676px] text-center">
-                    Convenient Fuel Buying made smarter, easier and more reliable – without the hassle of constant monitoring or comparison shopping.
+                    Convenient Fuel Buying made smarter, easier and more reliable — without the hassle of constant monitoring or comparison shopping.
                 </p>
                 <div className="flex gap-[15px]">
                     {
@@ -208,7 +160,7 @@ function LandingPage() {
                                 before:mt-[20px]
                             `}
                         icon={fourthSection.thunderIcon}
-                        text={"An exiting and cost effective way to buy fuel. Dealers bid their lowest price and delivery date to meet customer’s stated deadline. This option optimises efficiency by adding your delivery to a preplanned delivery route . "}
+                        text={"An exiting and cost effective way to buy fuel. Dealers bid their lowest price and delivery date to meet customer's stated deadline. This option optimises efficiency by adding your delivery to a preplanned delivery route . "}
                     />
                     <img src={image.mobileSec3} alt="" className="relative z-[2] w-[clamp(360px,29vw,420px)]" />
                     <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
@@ -216,6 +168,35 @@ function LandingPage() {
                             style={{ width: 650, height: 350 }}
                             className=" rounded-full bg-gradient-to-r from-[#FF690F9a] to-[#E8381B9a] opacity-[.91] blur-[60px] mix-blend-screen"
                         ></div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-black px-[clamp(60px,8.3vw,120px)] py-[clamp(40px,5.76vw,85px)] flex">
+                <div className="text-white w-[clamp(400px,43vw,632px)]">
+                    <h2 className="font-[600] text-[clamp(30px,3vw,42px)]">Explore Endless Possibilities with Smarter Fueling</h2>
+                    <p className="font-[400] text-[18px] w-[clamp(200px,34vw,496px)]">Smarter fueling with real-time insights, instant payments, smart refills, industry-leading security, and total control—right at your fingertips.</p>
+                    <ButtonFuel text={"Buy Fuel Now"} style={"mt-[47px] h-[80px] w-[213px] text-[20px] font-[500] hidden lg:block text-[black]"} />
+                </div>
+                <div className=" w-[clamp(400px,43vw,632px)]"></div>
+            </section>
+
+            <section className={`${px} ${py} `}>
+                <div className="text-center">
+                    <h2 className={`font-[500] text-[42px]`}>Fuel Your Business with Real-Time Intelligence</h2>
+                    <p className={`font-[300] text-[18px]`}>Track, analyze, and optimize your fuel operations — all in one powerful platform.</p>
+                </div>
+                <div>
+                    <h3>For Users</h3>
+                    <div>
+                        {fifthSection?.forUsers?.map((element, i) => {
+
+                            return (
+                                <div>
+                                    
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </section>

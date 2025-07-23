@@ -10,6 +10,7 @@ import chainIcon from "./icons/chainIcon.svg"
 
 // general icons
 import redirOrg from "./icons/redirectOrange.svg"
+import chartSuccess from "./icons/chart-success.svg"
 
 // image
 import rocket from "./images/muleRocket.png"
@@ -25,7 +26,7 @@ export const firstBannerIcons = {
 }
 
 export const generalIcons = {
-    redirOrg
+    redirOrg, chartSuccess
 }
 
 export const section2 = {

@@ -13,7 +13,7 @@ const Header = () => {
             {/* <button className="bg-gradient-to-r from-[#FDC830] rounded-[80px] to-[#F37335]  px-6 py-3 shadow-md">
                 Buy Fuel Now
             </button> */}
-            <ButtonFuel text={"Buy Fuel Now"} />
+            <ButtonFuel text={"Buy Fuel Now"} style={'px-6 py-3'} />
         </header>
     )
 }

@@ -69,7 +69,7 @@ function LandingPage() {
 
             {/* banner */}
             <section className="pt-20 px-[120px] border h-screen flex flex-col justify-center items-center gap-[15px]">
-                <h1 className="text-4xl font-bold ">
+                <h1 className="text-[clamp(28px,3vw,42px)] font-[500] text-center">
                     MiloFuel: A Better Way to Purchase Fuel Oil
                 </h1>
                 <p className=" text-[18px] font-[300] pb-[50px] w-[676px] text-center">
@@ -84,14 +84,14 @@ function LandingPage() {
                         })
                     }
                 </div>
-                <ButtonFuel text={"Buy Fuel Now"} style={"w-[213px] text-[20px] h-[80px] mt-[60px]"} />
+                <ButtonFuel text={"Buy Fuel Now"} style={"w-[clamp(150px,14vw,213px)] text-[clamp(14px,1.4vw,20px)] h-[clamp(40px,10vh,80px)] mt-[60px] px-[clamp(6px,2.5vw,24px)]"} />
             </section>
 
-            <section className={`bg-gradient-to-r from-[#FDC83020] to-[#F3733520] py-[60px] h-screen flex justify-between items-center px-[122px]`}>
+            <section className={`bg-gradient-to-r from-[#FDC83020] to-[#F3733520] py-[60px] h-screen flex flex-col lg:flex-row h-fit justify-between items-center px-[122px]`}>
                 <div className="w-[336px]">
                     <div className="flex flex-col gap-[20px]">
-                        <h2 className="text-[45px] font-[600]">Milo, the Mule</h2>
-                        <p className="leading-[34px] font-[300] text-[19.4px]">Your smart fuel assistant that keeps you informed, efficient, and always in control.</p>
+                        <h2 className="text-[clamp(30px,3vw,45px)] font-[600]">Milo, the Mule</h2>
+                        <p className="leading-[34px] font-[300] text-[clamp(13px,1.3vw,19.4px)]">Your smart fuel assistant that keeps you informed, efficient, and always in control.</p>
 
                         {
                             Section2?.map((element, i) => {
@@ -99,7 +99,7 @@ function LandingPage() {
                                 return (
                                     <div key={i} className="flex items-center gap-[19px]">
                                         <img src={element.icon} alt="" />
-                                        <p className="font-[300] text-[19.4px]">
+                                        <p className="font-[300] text-[clamp(13px,1.3vw,19.4px)]">
                                             {element.text}
                                         </p>
                                     </div>
@@ -107,7 +107,7 @@ function LandingPage() {
                             })
                         }
                     </div>
-                    <ButtonFuel text={"Tell Me More"} style={"mt-[47px] h-[80px] w-[213px] text-[20px] font-[500]"} />
+                    <ButtonFuel text={"Tell Me More"} style={"mt-[47px] h-[80px] w-[213px] text-[20px] font-[500] hidden lg:block"} />
 
                 </div>
 
@@ -147,6 +147,7 @@ function LandingPage() {
                     </div>
 
                 </div>
+
             </section>
 
             <section className="px-[120px] py-[80px] flex flex-col justify-center items-center text-center">
@@ -159,17 +160,20 @@ function LandingPage() {
                 <div className="relative w-full flex justify-center h-full mt-[50px]">
                     <FDCards
                         heading={"Fully Automatic"}
-                        style={`top-[50px] left-[0] after:content-['']
+                        style={`top-[50px] left-[0] 
+                                xl:after:content-['']
                                 after:absolute
                                 after:top-1/3
+                                after:z-[1]
                                 after:-translate-y-1/2
                                 after:left-[101%]
-                                after:w-[33%]
+                                after:w-[7.5vw]
                                 after:h-[1px]
                                 after:border-t
                                 after:border-dashed
                                 after:border-[#FA5C12]
-                                after:mt-[20px]`}
+                                after:mt-[20px]
+                                `}
                         icon={fourthSection.thunderIcon}
                         text={"Purchase fuel from a reliable local dealer at their current daily rate"}
                     />
@@ -178,6 +182,7 @@ function LandingPage() {
                         style={`top-[262px] left-[0] after:content-['']
                                 after:absolute
                                 after:top-1/3
+                                after:z-[1]
                                 after:-translate-y-1/2
                                 after:left-[101%]
                                 after:w-[40%]
@@ -205,7 +210,7 @@ function LandingPage() {
                         icon={fourthSection.thunderIcon}
                         text={"An exiting and cost effective way to buy fuel. Dealers bid their lowest price and delivery date to meet customer’s stated deadline. This option optimises efficiency by adding your delivery to a preplanned delivery route . "}
                     />
-                    <img src={image.mobileSec3} alt="" className="relative z-[1]" />
+                    <img src={image.mobileSec3} alt="" className="relative z-[2] w-[clamp(360px,29vw,420px)]" />
                     <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
                         <div
                             style={{ width: 650, height: 350 }}

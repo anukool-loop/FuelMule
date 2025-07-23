@@ -2,7 +2,7 @@ import { generalIcons } from "../../assets";
 
 export default function BannerCard({ icon, text }) {
     return (
-        <div className="border border-1 border-[#F95017] w-[289px]  rounded-lg bg-gradient-to-r from-[#FDC830] to-[#F37335] p-0">
+        <div className="border border-1 border-[#F95017] w-[20vw] rounded-lg bg-gradient-to-r from-[#FDC830] to-[#F37335] p-0">
 
             <div className="bg-white/90 rounded-lg p-[10px]">
 
@@ -12,7 +12,7 @@ export default function BannerCard({ icon, text }) {
                         <img src={icon} alt={"icons"} className="w-[29px] h-[29px]" />
                     </span>
 
-                    <p className="text-gray-800 text-[18px] flex-[1] font-[500] flex items-center ">
+                    <p className="text-gray-800 text-[clamp(12px,1.5vw,18px)] flex-[1] font-[500] flex items-center ">
                         {text || ""}
                     </p>
                 </div>

@@ -15,6 +15,11 @@ import redirOrg from "./icons/redirectOrange.svg"
 import rocket from "./images/muleRocket.png"
 import mobileSec3 from "./images/mobileSect3.png"
 
+// third section
+import hammerIcon from "./icons/hammer.svg"
+import thunderIcon from "./icons/thunder.svg"
+import checkinCircle from "./icons/checkinCircle.svg"
+
 export const firstBannerIcons = {
     treeIcon, labelIcon, recycleIcon, repairIcon
 }
@@ -29,4 +34,8 @@ export const section2 = {
 
 export const image = {
     rocket, mobileSec3
+}
+
+export const fourthSection = {
+    hammerIcon, thunderIcon, checkinCircle
 }

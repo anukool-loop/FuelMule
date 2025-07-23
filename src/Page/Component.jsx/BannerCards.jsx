@@ -12,7 +12,7 @@ export default function BannerCard({ icon, text }) {
                         <img src={icon} alt={"icons"} className="w-[29px] h-[29px]" />
                     </span>
 
-                    <p className="text-gray-800 text-[18px] flex-[1] font-[700] flex items-center ">
+                    <p className="text-gray-800 text-[18px] flex-[1] font-[500] flex items-center ">
                         {text || ""}
                     </p>
                 </div>

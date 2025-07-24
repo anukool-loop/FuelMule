@@ -6,7 +6,7 @@ import { section2 } from "../assets";
 import ButtonFuel from "./Component.jsx/ButtonFuel";
 import FDCards from "./Component.jsx/FDCards";
 import { fourthSection } from "../assets";
-import { BannerCards, fifthSection, rocketCards, Section2 } from "./Data/content";
+import { BannerCards, fifthSection, rocketCards, Section2, sixthContent } from "./Data/content";
 import FifthSecCard from "./Component.jsx/FifthSecCards";
 
 function LandingPage() {
@@ -194,6 +194,7 @@ function LandingPage() {
 
                             return (
                                 <FifthSecCard
+                                    key={i}
                                     icon={generalIcons.chartSuccess}
                                     text={element.text}
                                     heading={element.heading}
@@ -209,6 +210,7 @@ function LandingPage() {
 
                             return (
                                 <FifthSecCard
+                                    key={i}
                                     icon={generalIcons.chartSuccess}
                                     text={element.text}
                                     heading={element.heading}
@@ -217,6 +219,54 @@ function LandingPage() {
                         })}
                     </div>
                 </div>
+            </section>
+
+            <section className={`bg-gradient-to-r from-[#FDC83030] to-[#F3733530] ${px} ${py} flex gap-[64px]`}>
+                <div>
+                    <img src={image.content} alt="" className={`w-[581px]`} />
+                </div>
+                <div className={`w-[555px]`}>
+                    <h2 className="text-[36px] font-[600]">Few Easy Steps and You're All Set</h2>
+                    <p className="text-[20px] font-[400] text-[#383838]">Get started with Fuel Mule in minutes and take control of your fuel usage and refills—all in one place.</p>
+                    <div className="relative flex flex-col gap-[39px] mt-[70px]">
+                        {sixthContent?.map((element, i) => {
+                            const isThird = i === 2;
+                            const isLast = i === sixthContent.length - 1;
+                            const isOrange = !isThird;
+
+                            return (
+                                <div key={i} className="relative pl-6 flex items-center">
+                                    {/* Span with color and line */}
+                                    <span
+                                        className={`
+                                            relative font-bold z-10  block w-[50px] h-[50px]
+                                            flex justify-center items-center rounded-full
+                                            ${isOrange ? 'bg-[#F37335] text-white' : 'bg-white text-black'}
+                                        `}
+                                    >
+                                        {i + 1}
+
+                                        {/* Line going down from this span to the next */}
+                                        {!isLast && (
+                                            <span
+                                                className={`
+                                             absolute top-full left-1/2 -translate-x-1/2 w-px h-10 
+                                             ${i === 1 ? 'border-l border-dashed border-white' : 'bg-[#F37335]'}
+                                             `}
+                                            />
+                                        )}
+                                    </span>
+
+                                    {/* Text content */}
+                                    <p className="ml-2">{element.text}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+
+                </div>
+
             </section>
         </main >
     );

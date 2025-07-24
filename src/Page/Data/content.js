@@ -107,3 +107,15 @@ export const fifthSection = {
         }
     ]
 }
+
+export const sixthContent = [
+    {
+        text: "Create your Fuel Mule account.",
+    },
+    {
+        text: "Scan or link your gas tank.",
+    },
+    {
+        text: "You're all set—start monitoring and refueling smarter.",
+    }
+]

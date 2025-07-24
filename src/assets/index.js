@@ -15,6 +15,7 @@ import chartSuccess from "./icons/chart-success.svg"
 // image
 import rocket from "./images/muleRocket.png"
 import mobileSec3 from "./images/mobileSect3.png"
+import contentImage from "./images/Content.png"
 
 // third section
 import hammerIcon from "./icons/hammer.svg"
@@ -34,7 +35,7 @@ export const section2 = {
 }
 
 export const image = {
-    rocket, mobileSec3
+    rocket, mobileSec3, content: contentImage
 }
 
 export const fourthSection = {

@@ -10,6 +10,7 @@ import { BannerCards, fifthSection, rocketCards, Section2, sixthContent } from "
 import FifthSecCard from "./Component.jsx/FifthSecCards";
 import { FAQ } from "./Component.jsx/FAQ";
 import { Footer } from "./Component.jsx/Footer";
+import MobileCards from "./Component.jsx/Mobilecards";
 
 function LandingPage() {
     const px = 'sm:px-[clamp(60px,8.3vw,120px)] px-[14px]'
@@ -67,7 +68,7 @@ function LandingPage() {
                 </div>
 
                 <div className=" sm:w-[clamp(350px,54vw,790px)] w-[clamp(290px,90vw,790px)] sm:h-[606px] [@media(max-width:400px)]:h-[70vh] flex justify-center align-center relative ">
-                    <span className="block sm:w-[408px] w-[269px] aspect-[1/1] absolute top-[15%]  bg-gradient-to-r from-[#FF690F39] to-[#E8381B39] rounded-full"></span>
+                    <span className="block sm:w-[clamp(305px,28vw,408px)] w-[269px] aspect-[1/1] absolute top-[15%]  bg-gradient-to-r from-[#FF690F39] to-[#E8381B39] rounded-full"></span>
                     <img src={image.rocket} alt="" className="z-[1] sm:w-[261px] w-[170px] sm:h-[434px] h-[283px]" />
                     <div className="w-full absolute top-[49%] [@media(min-width:400px)]:top-[15%] grid grid-cols-2 sm:gap-x-[clamp(60px,10vw,274px)] md:gap-x-[clamp(60px,16vw,274px)] gap-x-[2px] z-[3] auto-rows-fr  justify-center items-center">
                         {rocketCards?.map((element, i) => {
@@ -80,7 +81,7 @@ function LandingPage() {
 
                             let marginTop = "";
                             if (!isFirstRow) {
-                                marginTop = isLastRow ? "lg:mt-[60px] md:mt-[-30px] sm:mt-[-40px] mt-[30px]" : "sm:mt-[clamp(30px,4.8vw,70px)]";
+                                marginTop = isLastRow ? "lg:mt-[60px] md:mt-[-30px] sm:mt-[-120px] mt-[30px]" : "sm:mt-[clamp(30px,4.5vw,70px)]";
                             }
 
                             return (
@@ -105,18 +106,22 @@ function LandingPage() {
 
             </section>
 
-            {/* <section className="px-[120px] py-[80px] flex flex-col justify-center items-center text-center">
-                <div>
+            <section className={`${px} py-[80px] flex flex-col justify-center items-center text-center `}>
+                <div className="">
                     <div>
-                        <h2 className="text-[42px] font-[500]">Fuel Delivery Options</h2>
-                        <p className="text-[18px] font-[300] w-[684px]">Whether you prefer speed, control, or cost-efficiency, our platform offers multiple options tailored to your needs.</p>
+                        <h2 className="sm:text-[clamp(28px,3vw,42px)] text-[22px] font-[500]">Fuel Delivery Options</h2>
+                        <p className="sm:text-[18px] text-[16px] font-[300] ms:w-[684px]">Whether you prefer speed, control, or cost-efficiency, our platform offers multiple options tailored to your needs.</p>
                     </div>
                 </div>
-                <div className="relative w-full flex justify-center h-full mt-[50px]">
-                    <FDCards
-                        heading={"Fully Automatic"}
-                        style={`top-[50px] left-[0] 
-                                xl:after:content-['']
+                <div className="relative w-full flex justify-center h-full mt-[50px] ">
+                        <FDCards
+                            heading={"Fully Automatic"}
+                            style={`top-[50px] left-[0] 
+                                absolute
+                                hidden [@media(min-width:840px)]:block
+                                after:content-['']
+                                after:hidden
+                                xl:after:block
                                 after:absolute
                                 after:top-1/3
                                 after:z-[1]
@@ -129,12 +134,16 @@ function LandingPage() {
                                 after:border-[#FA5C12]
                                 after:mt-[20px]
                                 `}
-                        icon={fourthSection.thunderIcon}
-                        text={"Purchase fuel from a reliable local dealer at their current daily rate"}
-                    />
-                    <FDCards
-                        heading={"Customer Confirm"}
-                        style={`top-[262px] left-[0] after:content-['']
+                            icon={fourthSection.thunderIcon}
+                            text={"Purchase fuel from a reliable local dealer at their current daily rate"}
+                        />
+                        <FDCards
+                            heading={"Customer Confirm"}
+                            style={`top-[262px] left-[0] after:content-['']
+                                absolute
+                                hidden [@media(min-width:840px)]:block
+                                after:hidden
+                                xl:after:block
                                 after:absolute
                                 after:top-1/3
                                 after:z-[1]
@@ -146,12 +155,16 @@ function LandingPage() {
                                 after:border-dashed
                                 after:border-[#FA5C12]
                                 after:mt-[20px]`}
-                        icon={fourthSection.thunderIcon}
-                        text={"Offer fuel from a reliable local dealer at their current daily rate with a delivery date. Customer confirms acceptance and delivery is made"}
-                    />
-                    <FDCards
-                        heading={"Reverse Auction"}
-                        style={`top-[120px] right-[0]
+                            icon={fourthSection.checkinCircle}
+                            text={"Offer fuel from a reliable local dealer at their current daily rate with a delivery date. Customer confirms acceptance and delivery is made"}
+                        />
+                        <FDCards
+                            heading={"Reverse Auction"}
+                            style={`top-[120px] right-[0]
+                                absolute
+                                hidden [@media(min-width:840px)]:block
+                                before:hidden
+                                xl:before:block
                                 before:absolute
                                 before:top-[40%]
                                 before:right-[101%]
@@ -161,10 +174,11 @@ function LandingPage() {
                                 before:border-dashed
                                 before:border-[#FA5C12]
                                 before:mt-[20px]
-                            `}
-                        icon={fourthSection.thunderIcon}
-                        text={"An exiting and cost effective way to buy fuel. Dealers bid their lowest price and delivery date to meet customer's stated deadline. This option optimises efficiency by adding your delivery to a preplanned delivery route . "}
-                    />
+                                `}
+                            icon={fourthSection.hammerIcon}
+                            text={"An exiting and cost effective way to buy fuel. Dealers bid their lowest price and delivery date to meet customer's stated deadline. This option optimises efficiency by adding your delivery to a preplanned delivery route . "}
+                        />
+                        <MobileCards />
                     <img src={image.mobileSec3} alt="" className="relative z-[2] w-[clamp(360px,29vw,420px)]" />
                     <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
                         <div
@@ -173,7 +187,7 @@ function LandingPage() {
                         ></div>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
             {/* <section className="bg-black px-[clamp(60px,8.3vw,120px)] py-[clamp(40px,5.76vw,85px)] flex">
                 <div className="text-white w-[clamp(400px,43vw,632px)]">

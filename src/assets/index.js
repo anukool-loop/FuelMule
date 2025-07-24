@@ -1,3 +1,6 @@
+// fuel Mule logo
+import logo from "./icons/fuelmuleLogo.svg"
+
 // icons for card
 import treeIcon from "./icons/tree.svg";
 import labelIcon from "./icons/labeltag.svg";
@@ -22,12 +25,17 @@ import hammerIcon from "./icons/hammer.svg"
 import thunderIcon from "./icons/thunder.svg"
 import checkinCircle from "./icons/checkinCircle.svg"
 
+// social Icons
+import facebook from "./icons/social/facebook.svg"
+import twitter from "./icons/social/twitter.svg"
+import insta from "./icons/social/insta.svg"
+
 export const firstBannerIcons = {
     treeIcon, labelIcon, recycleIcon, repairIcon
 }
 
 export const generalIcons = {
-    redirOrg, chartSuccess
+    redirOrg, chartSuccess, logo
 }
 
 export const section2 = {
@@ -40,4 +48,8 @@ export const image = {
 
 export const fourthSection = {
     hammerIcon, thunderIcon, checkinCircle
+}
+
+export const socialIcons = {
+    facebook, insta, twitter
 }

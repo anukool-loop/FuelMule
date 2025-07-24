@@ -9,6 +9,7 @@ import { fourthSection } from "../assets";
 import { BannerCards, fifthSection, rocketCards, Section2, sixthContent } from "./Data/content";
 import FifthSecCard from "./Component.jsx/FifthSecCards";
 import { FAQ } from "./Component.jsx/FAQ";
+import { Footer } from "./Component.jsx/Footer";
 
 function LandingPage() {
     const px = 'px-[clamp(60px,8.3vw,120px)]'
@@ -275,6 +276,8 @@ function LandingPage() {
                     <FAQ />
                 </div>
             </section>
+
+            <Footer />
         </main >
     );
 }

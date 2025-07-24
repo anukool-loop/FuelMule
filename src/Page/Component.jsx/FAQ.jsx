@@ -35,7 +35,7 @@ export const FAQ = () => {
     <div className=" mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="sm:text-3xl text-[20px] font-bold text-gray-900 sm:mb-8">
             Frequently Asked Questions
           </h2>
         </div>
@@ -48,7 +48,7 @@ export const FAQ = () => {
                   setOpenIndex(openIndex === index ? -1 : index)
                 }
               >
-                <span className="text-lg font-medium text-gray-900">
+                <span className="sm:text-lg text-[20px] font-[400] sm:font-medium text-gray-900">
                   {item.question}
                 </span>
                 <svg

@@ -12,8 +12,8 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-black text-white px-[120px]">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-black text-white sm:px-[clamp(60px,8.3vw,120px)] px-[14px] rounded-[20px_20px_0px_0px]">
+      <div className="mx-auto sm:px-6 lg:px-8 py-12">
         <div className="w-full">
           {/* Logo and Description */}
           <div className="w-full">
@@ -22,22 +22,22 @@ export const Footer = () => {
                 <img
                   src={generalIcons.logo}
                   alt="Fuel Mule Logo"
-                  className="h-[62px] w-[46px]"
+                  className="sm:h-[62px] sm:w-[46px] w-[27px] h-[36px]"
                 />
-                <span className="text-[30px] font-[700] satoshi-bold">Fuel Mule</span>
+                <span className="sm:text-[30px] text-[18px] font-[700] satoshi-bold">Fuel Mule</span>
               </div>
 
               {/* ⬇️ List-render social icons */}
-              <div className="flex md:justify-end justify-start items-center space-x-6 mt-4 md:mt-0">
+              <div className="flex md:justify-end justify-start items-center sm:space-x-6 gap-[8px] mt-4 md:mt-0">
                 {socialLinks.map(({ icon, alt, label, href }, index) => (
                   <a key={index} href={href} aria-label={label}>
-                    <img src={icon} alt={alt} className="h-[41px] w-[41px]" />
+                    <img src={icon} alt={alt} className="sm:w-[41px] w-[29px] aspect-[1/1]" />
                   </a>
                 ))}
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed text-[22px] font-[300] w-[597px]">
+            <p className="text-sm leading-relaxed sm:text-[22px] text-[16px] font-[300] sm:w-[597px]">
               We specialize in delivering high-quality fuel solutions tailored
               to meet the needs of businesses and individuals in our community.
             </p>
@@ -45,9 +45,10 @@ export const Footer = () => {
         </div>
 
         {/* Footer Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <span className="text-[18px] font-[400]">
+        <div className="border-t border-gray-800 sm:mt-8 mt-[20px] sm:pt-8 pt-[20px]">
+          <div className="flex flex-col md:flex-row justify-between sm:items-center items-start gap-[5px]">
+            <div className="self-start sm:hidden"><a href="mailto:Help@fuelmule.com" className="text-[12px]">Help@fuelmule.com</a></div>
+            <span className="sm:text-[18px] text-[12px] font-[400]">
               © 2024 Loop Methods. All Right Reserved
             </span>
           </div>

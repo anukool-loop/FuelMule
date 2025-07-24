@@ -24,7 +24,7 @@ function LandingPage() {
             <Header />
 
             {/* banner */}
-            <section className={`pt-[120px] pb-20 ${px} border  flex flex-col justify-center items-center gap-[15px]`}>
+            <section className={`pt-[120px] pb-20 ${px} flex flex-col justify-center items-center gap-[15px]`}>
                 <h1 className="text-[clamp(28px,3vw,42px)] font-[500] text-center">
                     MiloFuel: A Better Way to Purchase Fuel Oil
                 </h1>
@@ -106,7 +106,7 @@ function LandingPage() {
 
             </section>
 
-            <section className={`${px} py-[80px] flex flex-col justify-center items-center text-center `}>
+            <section className={`${px} py-[80px] flex flex-col justify-center items-center text-center [@media(max-width:840px)_and_(min-width:600px)]:pb-[60vh] [@media(max-width:600px)]:pb-[60vh]`}>
                 <div className="">
                     <div>
                         <h2 className="sm:text-[clamp(28px,3vw,42px)] text-[22px] font-[500]">Fuel Delivery Options</h2>
@@ -114,9 +114,9 @@ function LandingPage() {
                     </div>
                 </div>
                 <div className="relative w-full flex justify-center h-full mt-[50px] ">
-                        <FDCards
-                            heading={"Fully Automatic"}
-                            style={`top-[50px] left-[0] 
+                    <FDCards
+                        heading={"Fully Automatic"}
+                        style={`top-[50px] left-[0] 
                                 absolute
                                 hidden [@media(min-width:840px)]:block
                                 after:content-['']
@@ -134,12 +134,12 @@ function LandingPage() {
                                 after:border-[#FA5C12]
                                 after:mt-[20px]
                                 `}
-                            icon={fourthSection.thunderIcon}
-                            text={"Purchase fuel from a reliable local dealer at their current daily rate"}
-                        />
-                        <FDCards
-                            heading={"Customer Confirm"}
-                            style={`top-[262px] left-[0] after:content-['']
+                        icon={fourthSection.thunderIcon}
+                        text={"Purchase fuel from a reliable local dealer at their current daily rate"}
+                    />
+                    <FDCards
+                        heading={"Customer Confirm"}
+                        style={`top-[262px] left-[0] after:content-['']
                                 absolute
                                 hidden [@media(min-width:840px)]:block
                                 after:hidden
@@ -155,12 +155,12 @@ function LandingPage() {
                                 after:border-dashed
                                 after:border-[#FA5C12]
                                 after:mt-[20px]`}
-                            icon={fourthSection.checkinCircle}
-                            text={"Offer fuel from a reliable local dealer at their current daily rate with a delivery date. Customer confirms acceptance and delivery is made"}
-                        />
-                        <FDCards
-                            heading={"Reverse Auction"}
-                            style={`top-[120px] right-[0]
+                        icon={fourthSection.checkinCircle}
+                        text={"Offer fuel from a reliable local dealer at their current daily rate with a delivery date. Customer confirms acceptance and delivery is made"}
+                    />
+                    <FDCards
+                        heading={"Reverse Auction"}
+                        style={`top-[120px] right-[0]
                                 absolute
                                 hidden [@media(min-width:840px)]:block
                                 before:hidden
@@ -175,10 +175,10 @@ function LandingPage() {
                                 before:border-[#FA5C12]
                                 before:mt-[20px]
                                 `}
-                            icon={fourthSection.hammerIcon}
-                            text={"An exiting and cost effective way to buy fuel. Dealers bid their lowest price and delivery date to meet customer's stated deadline. This option optimises efficiency by adding your delivery to a preplanned delivery route . "}
-                        />
-                        <MobileCards />
+                        icon={fourthSection.hammerIcon}
+                        text={"An exiting and cost effective way to buy fuel. Dealers bid their lowest price and delivery date to meet customer's stated deadline. This option optimises efficiency by adding your delivery to a preplanned delivery route . "}
+                    />
+                    <MobileCards />
                     <img src={image.mobileSec3} alt="" className="relative z-[2] w-[clamp(360px,29vw,420px)]" />
                     <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
                         <div
@@ -189,23 +189,25 @@ function LandingPage() {
                 </div>
             </section>
 
-            {/* <section className="bg-black px-[clamp(60px,8.3vw,120px)] py-[clamp(40px,5.76vw,85px)] flex">
-                <div className="text-white w-[clamp(400px,43vw,632px)]">
-                    <h2 className="font-[600] text-[clamp(30px,3vw,42px)]">Explore Endless Possibilities with Smarter Fueling</h2>
-                    <p className="font-[400] text-[18px] w-[clamp(200px,34vw,496px)]">Smarter fueling with real-time insights, instant payments, smart refills, industry-leading security, and total control—right at your fingertips.</p>
-                    <ButtonFuel text={"Buy Fuel Now"} style={"mt-[47px] h-[80px] w-[213px] text-[20px] font-[500] hidden lg:block text-[black]"} />
+            <section className={`bg-black ${px} py-[clamp(40px,5.76vw,85px)] flex sm:flex-row flex-col [@media(max-width:600px)]:gap-[40px] items-center`}>
+                <div className="text-white sm:w-[clamp(400px,43vw,632px)] text-center sm:text-left">
+                    <h2 className="font-[600] text-[clamp(20px,3vw,42px)]">Explore Endless Possibilities with Smarter Fueling</h2>
+                    <p className="sm:font-[400] font-[300] mt-[10px] md:text-[18px] text-[14px] sm:w-[clamp(200px,34vw,496px)]">Smarter fueling with real-time insights, instant payments, smart refills, industry-leading security, and total control—right at your fingertips.</p>
+                    <ButtonFuel text={"Buy Fuel Now"} style={"mt-[47px] sm:h-[80px] h-[37px] sm:w-[213px] w-[130px] sm:text-[20px] text-[12px] font-[500]  text-[black]"} />
                 </div>
-                <div className=" w-[clamp(400px,43vw,632px)]"></div>
-            </section> */}
+                <div className=" w-[clamp(280px,43vw,632px)]">
+                    <img src={image.laptop} alt="" />
+                </div>
+            </section>
 
-            {/* <section className={`${px} ${py} `}>
+            <section className={`sm:px-[clamp(60px,8.3vw,120px)] px-[clamp(10px,4.3vw,30px)] ${py} `}>
                 <div className="text-center">
-                    <h2 className={`font-[500] text-[42px]`}>Fuel Your Business with Real-Time Intelligence</h2>
-                    <p className={`font-[300] text-[18px]`}>Track, analyze, and optimize your fuel operations — all in one powerful platform.</p>
+                    <h2 className={`font-[500] sm:text-[clamp(28px,3vw,42px)] text-[20px]`}>Fuel Your Business with Real-Time Intelligence</h2>
+                    <p className={`font-[300] sm:text-[18px] text-[16px]`}>Track, analyze, and optimize your fuel operations — all in one powerful platform.</p>
                 </div>
                 <div>
-                    <h3 className="font-[500] text-[24px] mb-[15px]">For Users</h3>
-                    <div className="grid grid-cols-3 gap-[30px]">
+                    <h3 className="font-[500] sm:text-[24px] text-[20px] my-[15px]">For Users</h3>
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-[30px]">
                         {fifthSection?.forUsers?.map((element, i) => {
 
                             return (
@@ -220,8 +222,8 @@ function LandingPage() {
                     </div>
                 </div>
                 <div>
-                    <h3 className="font-[500] text-[24px] my-[15px] mt-[30px]">For Oil Dealers</h3>
-                    <div className="grid grid-cols-3 gap-[30px]">
+                    <h3 className="font-[500] sm:text-[24px] text-[20px] my-[15px] mt-[30px]">For Oil Dealers</h3>
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
                         {fifthSection?.forDealers?.map((element, i) => {
 
                             return (
@@ -235,15 +237,15 @@ function LandingPage() {
                         })}
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className={`bg-gradient-to-r from-[#FDC83030] to-[#F3733530] ${px} ${py} flex gap-[64px]`}>
+            <section className={`bg-gradient-to-r from-[#FDC83030] to-[#F3733530] ${px} ${py} flex sm:flex-row flex-col items-center gap-[64px]`}>
                 <div>
-                    <img src={image.content} alt="" className={`w-[581px]`} />
+                    <img src={image.content} alt="" className={`sm:w-[581px]`} />
                 </div>
-                <div className={`w-[555px]`}>
-                    <h2 className="text-[36px] font-[600]">Few Easy Steps and You're All Set</h2>
-                    <p className="text-[20px] font-[400] text-[#383838]">Get started with Fuel Mule in minutes and take control of your fuel usage and refills—all in one place.</p>
+                <div className={`sm:w-[555px]`}>
+                    <h2 className="sm:text-[clamp(28px,3vw,42px)] text-[20px] font-[600]">Few Easy Steps and You're All Set</h2>
+                    <p className="sm:text-[20px] font-[400] text-[#383838]">Get started with Fuel Mule in minutes and take control of your fuel usage and refills—all in one place.</p>
                     <div className="relative flex flex-col gap-[39px] mt-[70px]">
                         {sixthContent?.map((element, i) => {
                             const isThird = i === 2;
@@ -251,44 +253,48 @@ function LandingPage() {
                             const isOrange = !isThird;
 
                             return (
-                                <div key={i} className="relative pl-6 flex items-center">
-                                    <span
-                                        className={`
-                                            relative font-bold z-10  block w-[50px] h-[50px]
-                                            flex justify-center items-center rounded-full
-                                            ${isOrange ? 'bg-[#F37335] text-white' : 'bg-white text-black'}
-                                        `}
-                                    >
-                                        {i + 1}
+                                <div key={i} className="relative flex items-start">
+                                    {/* Number + Line wrapper */}
+                                    <div className="sm:w-[60px] w-[48px] flex flex-col items-center shrink-0 relative">
+                                        <span
+                                            className={`
+                                                     w-[50px] h-[50px] flex justify-center items-center rounded-full font-bold z-10
+                                                     ${isOrange ? 'bg-[#F37335] text-white' : 'bg-white text-black'}
+                                                    `}
+                                        >
+                                            {i + 1}
+                                        </span>
 
                                         {!isLast && (
                                             <span
                                                 className={`
-                                             absolute top-full left-1/2 -translate-x-1/2 w-px h-10 
-                                             ${i === 1 ? 'border-l border-dashed border-white' : 'bg-[#F37335]'}
-                                             `}
+                                                     absolute top-[50px] left-1/2 -translate-x-1/2 w-px h-[39px]
+                                                     ${i === 1 ? 'border-l border-dashed border-white' : 'bg-[#F37335]'}
+                                                    `}
                                             />
                                         )}
-                                    </span>
+                                    </div>
 
-                                    <p className="ml-2">{element.text}</p>
+                                    {/* Text */}
+                                    <p className="ml-4 text-[16px] leading-snug">{element.text}</p>
                                 </div>
                             );
                         })}
                     </div>
 
 
+
                 </div>
 
-            </section> */}
+            </section>
 
-            {/* <section className="py-16">
+            <section className="py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <FAQ />
                 </div>
-            </section> */}
+            </section>
 
-            {/* <Footer /> */}
+            <Footer />
         </main >
     );
 }

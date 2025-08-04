@@ -1,26 +1,6 @@
 import { firstBannerIcons, section2 } from "../../assets/index";
 
 
-export const BannerCards = [
-    {
-        text: "Reduced risk of runout",
-        icon: firstBannerIcons.recycleIcon
-    },
-    {
-        text: "Better pricing without shopping around",
-        icon: firstBannerIcons.labelIcon
-    },
-    {
-        text: "More burner service options",
-        icon: firstBannerIcons.repairIcon
-    },
-    {
-        text: "Better for the environment",
-        icon: firstBannerIcons.treeIcon
-    }
-]
-
-
 export const Section2 = [
     {
         text: "Milo does the work",

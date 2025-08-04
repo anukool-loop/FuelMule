@@ -1,6 +1,29 @@
+import { useEffect, useState } from "react";
 import { generalIcons } from "../../assets";
+import BannerPopup from "./BannerPopUps";
 
-export default function BannerCard({ icon, text }) {
+function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+}
+
+export default function BannerCard({ icon, text, renderPopUp }) {
+    const [popUp, setPopUp] = useState(false)
+
+
+
+    useEffect(() => {
+        if (popUp) {
+            document.body.classList.add("overflow-hidden");
+            const scrollbarWidth = getScrollbarWidth();
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        } else {
+            document.body.classList.remove("overflow-hidden");
+            document.body.style.paddingRight = "";
+        }
+
+    }, [popUp]);
+
+
     return (
         <div className="border border-1 border-[#F95017] w-full sm:w-[20vw] rounded-lg bg-gradient-to-r from-[#FDC830] to-[#F37335] p-0">
 
@@ -18,7 +41,7 @@ export default function BannerCard({ icon, text }) {
                 </div>
 
                 <div className="flex justify-between pt-[15px]">
-                    <p className="text-[16px] font-[100] border-b">
+                    <p className="text-[16px] font-[100] border-b cursor-pointer" onClick={() => setPopUp(true)}>
                         Tell me more
                     </p>
                     <img src={generalIcons.redirOrg} alt={"icons"}
@@ -27,15 +50,10 @@ export default function BannerCard({ icon, text }) {
                 </div>
 
             </div>
-
+            {
+                popUp &&
+                <BannerPopup heading={text} element={renderPopUp} close={() => setPopUp(false)} /> //* remember that element is a function 
+            }
         </div>
-
     );
 }
-
-
-{/* <div className="p-[1px] rounded-lg overflow-hidden bg-gradient-to-r from-[#FF690F] to-[#E8381B]">
-      <div className="bg-white rounded-lg p-4">
-        <p className="text-gray-800">Gradient border with your colors!</p>
-      </div>
-    </div> */}

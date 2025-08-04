@@ -1,12 +1,12 @@
 import Header from "./Component.jsx/Header";
 import BannerCard from "./Component.jsx/BannerCards";
-// import { firstBannerIcons } from "../assets";
+import { firstBannerIcons } from "../assets";
 import { generalIcons, image } from "../assets";
 import { section2 } from "../assets";
 import ButtonFuel from "./Component.jsx/ButtonFuel";
 import FDCards from "./Component.jsx/FDCards";
 import { fourthSection } from "../assets";
-import { BannerCards, fifthSection, rocketCards, Section2, sixthContent } from "./Data/content";
+import { fifthSection, rocketCards, Section2, sixthContent } from "./Data/content";
 import FifthSecCard from "./Component.jsx/FifthSecCards";
 import { FAQ } from "./Component.jsx/FAQ";
 import { Footer } from "./Component.jsx/Footer";
@@ -17,7 +17,62 @@ function LandingPage() {
     const py = 'py-[clamp(40px,5.76vw,85px)]'
 
 
-
+    const BannerCards = [
+        {
+            text: "Reduced risk of runout",
+            icon: firstBannerIcons.recycleIcon,
+            popup: () => <div className="">
+                <p>
+                    Virtually all automatic delivery fuel dealers estimate your fuel consumption using current and forecasted weather conditions and something called a “K-factor”, which is a unique number based on your specific home and historical consumption. Using this
+                    method the dealer estimates when you will need a fuel delivery. However, using estimates introduces two distinct shortcomings. First, it does not take into account varying consumption rates based on occupancy and habits. You could be away on
+                    vacation with your thermostat set to 55°. Or your kids might have come home from school and are keeping their bedroom windows open! In the first case your dealer will come to fill your tank when it doesn't need a refill, which costs them {"("}and you{")"} extra in the price of every gallon delivered. In the second case you would run out of fuel because your consumption has increased well beyond the normal rate used in the “K-factor” calculation. For these reasons a responsible fuel dealer will over-deliver, subsequently
+                    increasing their cost, your price and increasing the miles drive by their trucking fleet….at ~6 miles per gallon of diesel fuel!
+                </p>
+                <h4>You don't have to remember to check your fuel!</h4>
+                <p>The Milo constantly monitors your fuel tank level and provides real time information and notifications regarding how much fuel is in your tank.</p>
+                <ul className="list-disc pl-7">
+                    <li>When your tank is more than 30% full Milo automatically texts the level to your
+                        phone once weekly.</li>
+                    <li>When your tank level falls below 30% Milo automatically texts the level to your
+                        phone once daily, and provides a convenient link to purchase fuel!</li>
+                    <li>
+                        And if you're curious you can check at any time by simply texting the letter “Q”
+                        to Milo to find out how much fuel you have at that very moment.
+                    </li>
+                </ul>
+            </div>
+        },
+        {
+            text: "Better pricing without shopping around",
+            icon: firstBannerIcons.labelIcon,
+            popup: () => <p>
+                Fuel Mule continually shops for best fuel prices so you don't have to. We provide a
+                convenient link for you to purchase fuel when you needed using multiple convenient and cost effective payment methods. And don't worry — this is the same high quality fuel that the other dealers deliver that comes from the same source distributors.
+            </p>
+        },
+        {
+            text: "More burner service options",
+            icon: firstBannerIcons.repairIcon,
+            popup: () => <p>
+                Fuel Mule customers enjoy the flexibility of not being tethered to the service resources
+                of a single fuel dealer's service technicians. While the service provided by dealers is
+                typoically high quality and very reliable you have to compete for those resources on
+                their busiest and coldest nights. With Fuel Mule we provide a marketplace for
+                independent, licensed and experienced service providers who can address your
+                emergency {"("}and routine{")"} heating system service needs 24/7, typically at a very
+                competitive price.
+            </p>
+        },
+        {
+            text: "Better for the environment",
+            icon: firstBannerIcons.treeIcon,
+            popup: () => <p>
+                The Milo tank monitor enables the customer to safely reduce the number
+                of fuel deliveries to their tank by ~40%, on average 5 deliveries per year instead of 8!
+                This reduces highway miles driven by fuel delivery trucks {"("}at 6-MPG{")"} for fuel deliveries, in turn reducing carbon emissions. This also reduces the cost to the delivery operator, since each delivery costs and average of $45.
+            </p>
+        }
+    ]
 
     return (
         <main className="font-poppins">
@@ -35,7 +90,7 @@ function LandingPage() {
                     {
                         BannerCards?.map((element, index) => {
                             return (
-                                <BannerCard key={index} text={element.text} icon={element.icon} />
+                                <BannerCard key={index} text={element.text} icon={element.icon} renderPopUp={element.popup} />
                             )
                         })
                     }
@@ -63,7 +118,7 @@ function LandingPage() {
                             })
                         }
                     </div>
-                    <ButtonFuel text={"Tell Me More"} style={"mt-[47px] h-[80px] w-[213px] text-[20px] font-[500] hidden sm:block"} />
+                    <ButtonFuel href={"https://getnetfuels.com/"} text={"Buy Fuel Now"} style={"mt-[47px] h-[80px] w-[213px] text-[20px] font-[500] hidden sm:block"} />
 
                 </div>
 
